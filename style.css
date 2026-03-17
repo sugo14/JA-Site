@@ -2,6 +2,16 @@ body {
     margin: 0;
 }
 
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: skyblue;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
     position: relative;
 }
@@ -24,10 +34,32 @@ body {
     transform: translate(-50%, -50%);
 }
 
-main {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.landscape {
+    width: 45%;
+    height: 30%;
+    background-color: green;
+
+    position: absolute;
+    bottom: 0%;
+}
+.landscape.left {
+    left: 0%;
+}
+.landscape.right {
+    right: 0%;
+}
+
+.mountains {
+    width: 30%;
+    height: 45%;
+    background-color: grey;
+
+    position: absolute;
+    bottom: 30%;
+}
+.mountains.left {
+    left: 0%;
+}
+.mountains.right {
+    right: 0%;
 }
