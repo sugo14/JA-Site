@@ -1,11 +1,12 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 nav {
     width: calc(100vw - 20px);
-    height: 55px;
+    height: 40px;
     background-color: skyblue;
 
     display: flex;
@@ -44,7 +45,7 @@ nav p {
 
 main {
     width: 100vw;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 40px);
     background-color: skyblue;
 
     display: flex;
@@ -64,7 +65,7 @@ main {
 
 .landing-logo .centre {
     background-color: yellow;
-    border-radius:100%;
+    border-radius: 100%;
     width: 35vh;
     height: 35vh;
 
