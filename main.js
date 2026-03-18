@@ -1,7 +1,7 @@
 import { animate, utils, createDraggable, spring } from 'animejs';
 
-const LOGO_ID = '.logo';
-const LOGO_OUTER_ID = '.logo .outer';
+const LOGO_ID = '.landing-logo';
+const LOGO_OUTER_ID = '.landing-logo .outer';
 
 const [ $logo ] = utils.$(LOGO_ID);
 let rotations = 0;

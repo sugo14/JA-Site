@@ -5,8 +5,8 @@ body {
 
 nav {
     width: calc(100vw - 20px);
-    height: 50px;
-    background-color: orange;
+    height: 55px;
+    background-color: skyblue;
 
     display: flex;
     justify-content: right;
@@ -14,16 +14,37 @@ nav {
     padding-right: 20px;
 }
 
+nav .logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: yellow;
+
+    position: absolute;
+    top: 17px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 nav a {
     margin-right: 30px;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+nav p {
+    margin: 0;
+    margin-right: 30px;
     color: black;
-    font-style: normal;
-    font-size: 20px;
+    margin-top: 20px;
+    font-size: 25px;
 }
 
 main {
     width: 100vw;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 55px);
     background-color: skyblue;
 
     display: flex;
@@ -31,21 +52,21 @@ main {
     align-items: center;
 }
 
-.logo {
+.landing-logo {
     position: relative;
 }
 
-.logo .outer {
-    background-color: black;
-    width: 250px;
-    height: 250px;
+.landing-logo .outer {
+    background-color: orange;
+    width: 45vh;
+    height: 45vh;
 }
 
-.logo .centre {
-    background-color: red;
+.landing-logo .centre {
+    background-color: yellow;
     border-radius:100%;
-    width: 200px;
-    height: 200px;
+    width: 35vh;
+    height: 35vh;
 
     position: absolute;
     top: 50%;
