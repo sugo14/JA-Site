@@ -1,11 +1,15 @@
-import { animate, utils, createDraggable, spring } from 'animejs';
+import { animate, utils, createDraggable, spring, onScroll, createTimeline } from 'animejs';
 
 const LOGO_ID = '.landing-logo';
 const LOGO_OUTER_ID = '.landing-logo .outer';
 const LANDSCAPE_LEFT_ID = ".landscape.left";
-const MOUNTAIN_LEFT_ID = ".mountains.left";
+const OUTER_LANDSCAPE_LEFT_ID = ".outer-landscape.left";
+const MOUNTAINS_LEFT_ID = ".mountains.left";
+const OUTER_MOUNTAINS_LEFT_ID = ".outer-mountains.left";
 const LANDSCAPE_RIGHT_ID = ".landscape.right";
-const MOUNTAIN_RIGHT_ID = ".mountains.right";
+const OUTER_LANDSCAPE_RIGHT_ID = ".outer-landscape.right";
+const MOUNTAINS_RIGHT_ID = ".mountains.right";
+const OUTER_MOUNTAINS_RIGHT_ID = ".outer-mountains.right";
 
 const [ $logo ] = utils.$(LOGO_ID);
 let rotations = 0;
@@ -30,24 +34,73 @@ animate(LOGO_OUTER_ID, {
 	duration: 7500
 });
 
-// Pull in the landscape when the page loads
-animate(LANDSCAPE_LEFT_ID, {
+const LANDSCAPE_LEFT_TL_1 = createTimeline();
+LANDSCAPE_LEFT_TL_1.add(LANDSCAPE_LEFT_ID, {
 	x: [-600, -100],
 	rotate: [90, 0],
-	ease: spring({ duration: 1500, bounce: 0.4 })
+	ease: spring({ duration: 1500, bounce: 0.25 })
 });
-animate(MOUNTAIN_LEFT_ID, {
+animate(MOUNTAINS_LEFT_ID, {
 	x: [-400, -100],
 	rotate: [-90, 0],
-	ease: spring({ duration: 1500, bounce: 0.4 })
+	ease: spring({ duration: 1500, bounce: 0.25 })
 });
 animate(LANDSCAPE_RIGHT_ID, {
 	x: [600, 100],
 	rotate: [-90, 0],
-	ease: spring({ duration: 1500, bounce: 0.4 })
+	ease: spring({ duration: 1500, bounce: 0.25 })
 });
-animate(MOUNTAIN_RIGHT_ID, {
+animate(MOUNTAINS_RIGHT_ID, {
 	x: [400, 100],
 	rotate: [90, 0],
-	ease: spring({ duration: 1500, bounce: 0.4 })
+	ease: spring({ duration: 1500, bounce: 0.25 })
+});
+
+animate(OUTER_LANDSCAPE_LEFT_ID, {
+	x: [0, -500],
+	y: [0, 300],
+	rotate: [0, 90],
+	ease: 'linear',
+	autoplay: onScroll({
+		enter: 'top top-=250',
+		leave: 'top bottom',
+		sync: .2,
+		// debug: true,
+	})
+});
+animate(OUTER_LANDSCAPE_RIGHT_ID, {
+	x: [0, 500],
+	y: [0, 300],
+	rotate: [0, -90],
+	ease: 'linear',
+	autoplay: onScroll({
+		enter: 'top top-=250',
+		leave: 'top bottom',
+		sync: .2,
+		// debug: true,
+	})
+});
+animate(OUTER_MOUNTAINS_LEFT_ID, {
+	x: [0, -300],
+	y: [0, 150],
+	rotate: [0, 90],
+	ease: 'linear',
+	autoplay: onScroll({
+		enter: 'top top-=100',
+		leave: 'top bottom+=100',
+		sync: .2,
+		// debug: true,
+	})
+});
+animate(OUTER_MOUNTAINS_RIGHT_ID, {
+	x: [0, 300],
+	y: [0, 150],
+	rotate: [0, -90],
+	ease: 'linear',
+	autoplay: onScroll({
+		enter: 'top top-=100',
+		leave: 'top bottom+=100',
+		sync: .2,
+		// debug: true,
+	})
 });
