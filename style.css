@@ -115,3 +115,20 @@ main {
     width: 10px;
     background-color: blue;
 }
+
+/* transform elements to animation start position */
+.landing-logo {
+    transform: translateY(-600px);
+}
+.landscape.left {
+    transform: translateX(-600px) rotate(90deg);
+}
+.landscape.right {
+    transform: translateX(600px) rotate(-90deg);
+}
+.mountains.left {
+    transform: translateX(-400px) rotate(-90deg);
+}
+.mountains.right {
+    transform: translateX(400px) rotate(90deg);
+}
