@@ -1,7 +1,8 @@
 import { animate, utils, createDraggable, spring, onScroll, createTimeline } from 'animejs';
 
-const LOGO_ID = '.landing-logo';
-const LOGO_OUTER_ID = '.landing-logo .outer';
+const LOGO_ID = ".landing-logo";
+const LOGO_OUTER_ID = ".landing-logo .outer";
+const TAGLINE_ID = ".tagline"
 const LANDSCAPE_LEFT_ID = ".landscape.left";
 const OUTER_LANDSCAPE_LEFT_ID = ".outer-landscape.left";
 const MOUNTAINS_LEFT_ID = ".mountains.left";
@@ -19,12 +20,11 @@ createDraggable(LOGO_ID, {
 	container: [0, 0, 0, 0],
 	releaseEase: spring({ bounce: .5 })
 });
-// Make the logo come from the top initially
+// Logo entrance on page open
 animate(LOGO_ID, {
 	y: [-600, 0],
-	duration: 2000
+	duration: 2500
 });
-
 // Rotate the outer logo
 animate(LOGO_OUTER_ID, {
 	rotate: 360,
@@ -34,8 +34,15 @@ animate(LOGO_OUTER_ID, {
 	duration: 7500
 });
 
-const LANDSCAPE_LEFT_TL_1 = createTimeline();
-LANDSCAPE_LEFT_TL_1.add(LANDSCAPE_LEFT_ID, {
+// Tagline entrance on page open
+animate(TAGLINE_ID, {
+	y: [150, 0],
+	duration: 1000,
+	delay: 2000
+});
+
+// Landscape entrance on page open
+animate(LANDSCAPE_LEFT_ID, {
 	x: [-600, -100],
 	rotate: [90, 0],
 	ease: spring({ duration: 1500, bounce: 0.25 })
@@ -56,6 +63,7 @@ animate(MOUNTAINS_RIGHT_ID, {
 	ease: spring({ duration: 1500, bounce: 0.25 })
 });
 
+// Landscape exit on scroll
 animate(OUTER_LANDSCAPE_LEFT_ID, {
 	x: [0, -500],
 	y: [0, 300],

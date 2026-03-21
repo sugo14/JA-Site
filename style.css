@@ -1,6 +1,25 @@
+@font-face {
+    font-family: 'Lazydog';
+    src: url('./assets/Lazydog.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari, Chrome, Opera, Android */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard syntax */
+  -webkit-user-drag: none; /* Safari, Chrome, Opera */
+  user-drag: none; /* Standard syntax for dragging */
+  draggable: false; /* HTML attribute equivalent */
+}
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lazydog', Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
@@ -44,16 +63,29 @@ nav p {
 
 main {
     width: 100vw;
-    height: calc(100vh - 40px);
+    height: 100vh;
     background-color: skyblue;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.tagline {
+    font-size: 40px;
+    color: #F3A530;
+    margin: 0;
+    z-index: 1;
+}
+.tagline span {
+    color: #E86910;
 }
 
 .landing-logo {
     position: relative;
+    margin: 0px;
+    margin-top: -10px; /* kinda twisted */
 }
 
 .landing-logo .outer {
@@ -119,6 +151,9 @@ main {
 /* transform elements to animation start position */
 .landing-logo {
     transform: translateY(-600px);
+}
+.tagline {
+    transform: translateY(200px);
 }
 .landscape.left {
     transform: translateX(-600px) rotate(90deg);
