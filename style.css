@@ -17,6 +17,10 @@
   draggable: false; /* HTML attribute equivalent */
 }
 
+html {
+    /* scroll-behavior: smooth; */
+}
+
 body {
     margin: 0;
     font-family: 'Lazydog', Arial, Helvetica, sans-serif;
@@ -77,6 +81,14 @@ main {
     color: #F3A530;
     margin: 0;
     z-index: 1;
+
+    position: sticky;
+    top: 45vh;
+    text-align: center;
+
+    /* temp */
+    transform-origin: center center;
+    will-change: transform;
 }
 .tagline span {
     color: #E86910;
@@ -85,7 +97,7 @@ main {
 .landing-logo {
     position: relative;
     margin: 0px;
-    margin-top: -10px; /* kinda twisted */
+    margin-top: -50px; /* kinda twisted */
 }
 
 .landing-logo .outer {
@@ -153,7 +165,7 @@ main {
     transform: translateY(-600px);
 }
 .tagline {
-    transform: translateY(200px);
+    margin-top: -130px;
 }
 .landscape.left {
     transform: translateX(-600px) rotate(90deg);
@@ -166,4 +178,14 @@ main {
 }
 .mountains.right {
     transform: translateX(400px) rotate(90deg);
+}
+
+section.two {
+    height: 120vh;
+    background-color: blue;
+}
+
+.tagline-box {
+    height: 50vh;
+    background-color: red;
 }

@@ -3,6 +3,7 @@ import { animate, utils, createDraggable, spring, onScroll, createTimeline } fro
 const LOGO_ID = ".landing-logo";
 const LOGO_OUTER_ID = ".landing-logo .outer";
 const TAGLINE_ID = ".tagline"
+const PAGE_SCROLL_TARGET_ID = "body";
 const LANDSCAPE_LEFT_ID = ".landscape.left";
 const OUTER_LANDSCAPE_LEFT_ID = ".outer-landscape.left";
 const MOUNTAINS_LEFT_ID = ".mountains.left";
@@ -36,9 +37,22 @@ animate(LOGO_OUTER_ID, {
 
 // Tagline entrance on page open
 animate(TAGLINE_ID, {
-	y: [150, 0],
+	opacity: [0, 1],
 	duration: 1000,
-	delay: 2000
+	delay: 500
+});
+
+// Make sticky tagline grow while scrolling through section two
+animate(TAGLINE_ID, {
+	scale: [1, 1.5],
+	ease: 'linear',
+	autoplay: onScroll({
+		target: PAGE_SCROLL_TARGET_ID,
+		enter: 'top top+=35vh',
+		leave: 'top top+=75vh',
+		sync: .8,
+		// debug: true,
+	})
 });
 
 // Landscape entrance on page open
@@ -72,7 +86,7 @@ animate(OUTER_LANDSCAPE_LEFT_ID, {
 	autoplay: onScroll({
 		enter: 'top top-=250',
 		leave: 'top bottom',
-		sync: .2,
+		sync: .4,
 		// debug: true,
 	})
 });
@@ -84,7 +98,7 @@ animate(OUTER_LANDSCAPE_RIGHT_ID, {
 	autoplay: onScroll({
 		enter: 'top top-=250',
 		leave: 'top bottom',
-		sync: .2,
+		sync: .4,
 		// debug: true,
 	})
 });
@@ -96,7 +110,7 @@ animate(OUTER_MOUNTAINS_LEFT_ID, {
 	autoplay: onScroll({
 		enter: 'top top-=100',
 		leave: 'top bottom+=100',
-		sync: .2,
+		sync: .4,
 		// debug: true,
 	})
 });
@@ -108,7 +122,7 @@ animate(OUTER_MOUNTAINS_RIGHT_ID, {
 	autoplay: onScroll({
 		enter: 'top top-=100',
 		leave: 'top bottom+=100',
-		sync: .2,
+		sync: .4,
 		// debug: true,
 	})
 });
