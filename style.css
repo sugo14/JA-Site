@@ -179,6 +179,9 @@ main {
 .mountains.right {
     transform: translateX(400px) rotate(90deg);
 }
+.tagline {
+    opacity: 0;
+}
 
 section.two {
     height: 120vh;
