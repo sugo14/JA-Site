@@ -12,6 +12,7 @@ const LANDSCAPE_RIGHT_ID = ".landscape.right";
 const OUTER_LANDSCAPE_RIGHT_ID = ".outer-landscape.right";
 const MOUNTAINS_RIGHT_ID = ".mountains.right";
 const OUTER_MOUNTAINS_RIGHT_ID = ".outer-mountains.right";
+const TWO_INNER_ID = ".two-inner";
 
 const [ $logo ] = utils.$(LOGO_ID);
 let rotations = 0;
@@ -33,26 +34,6 @@ animate(LOGO_OUTER_ID, {
 	loop: true,
 	loopDelay: 0, 
 	duration: 7500
-});
-
-// Tagline entrance on page open
-animate(TAGLINE_ID, {
-	opacity: [0, 1],
-	duration: 1000,
-	delay: 500
-});
-
-// Make sticky tagline grow while scrolling through section two
-animate(TAGLINE_ID, {
-	scale: [1, 1.5],
-	ease: 'linear',
-	autoplay: onScroll({
-		target: PAGE_SCROLL_TARGET_ID,
-		enter: 'top top+=35vh',
-		leave: 'top top+=75vh',
-		sync: .8,
-		// debug: true,
-	})
 });
 
 // Landscape entrance on page open
@@ -124,5 +105,35 @@ animate(OUTER_MOUNTAINS_RIGHT_ID, {
 		leave: 'top bottom+=100',
 		sync: .4,
 		// debug: true,
+	})
+});
+
+// Tagline entrance on page open
+animate(TAGLINE_ID, {
+	opacity: [0, 1],
+	y: [30, 0],
+	duration: 1000,
+	delay: 500
+});
+// Make sticky tagline grow while scrolling through section two
+animate(TAGLINE_ID, {
+	scale: [1, 1.5],
+	ease: 'linear',
+	autoplay: onScroll({
+		target: PAGE_SCROLL_TARGET_ID,
+		enter: 'top top+=35vh',
+		leave: 'top top+=75vh',
+		sync: .8,
+		// debug: true,
+	})
+});
+
+animate(TWO_INNER_ID, {
+	opacity: [0, 1],
+	y: [30, 0],
+	duration: 500,
+	autoplay: onScroll({
+		enter: 'bottom bottom-=50%',
+		onEnter: (animation) => animation.play()
 	})
 });
