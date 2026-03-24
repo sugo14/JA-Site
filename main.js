@@ -15,6 +15,24 @@ const OUTER_MOUNTAINS_RIGHT_ID = ".outer-mountains.right";
 const TWO_INNER_ID = ".two-inner";
 
 let initialized = false;
+let logoSpinAnimation = null;
+
+const LOGO_EL = document.querySelector(LOGO_ID);
+
+function startLogoSpin(dur) {
+	if (logoSpinAnimation) {
+		logoSpinAnimation.pause?.();
+		logoSpinAnimation.cancel?.();
+	}
+
+	logoSpinAnimation = animate(LOGO_OUTER_ID, {
+        rotate: '+=360',
+        ease: 'linear',
+        loop: true,
+        loopDelay: 0,
+        duration: dur
+    });
+}
 
 function initializeAnimations() {
 	if (initialized) { return; }
@@ -31,12 +49,24 @@ function initializeAnimations() {
 		duration: 2500
 	});
 	// Rotate the outer logo
-	animate(LOGO_OUTER_ID, {
-		rotate: 360,
-		ease: "",
-		loop: true,
-		loopDelay: 0, 
-		duration: 7500
+	startLogoSpin(7500);
+	
+	// Increase rotation speed and scale when hovered on
+	LOGO_EL.addEventListener('mouseenter', () => {
+		startLogoSpin(4000); // Increase rotation speed
+		animate(LOGO_ID, {
+			scale: 1.1,
+			duration: 500,
+			ease: spring({ bounce: .5 })
+		});
+	});
+	LOGO_EL.addEventListener('mouseleave', () => {
+		startLogoSpin(7500); // Reset rotation speed
+		animate(LOGO_ID, {
+			scale: 1,
+			duration: 500,
+			ease: spring({ bounce: .5 })
+		});
 	});
 
 	// Landscape entrance on page open
@@ -121,6 +151,7 @@ function initializeAnimations() {
 	// Make sticky tagline grow while scrolling through section two
 	animate(TAGLINE_ID, {
 		scale: [1, 1.5],
+		color: ['#F3A530', '#FFF'],
 		ease: 'linear',
 		autoplay: onScroll({
 			target: PAGE_SCROLL_TARGET_ID,
