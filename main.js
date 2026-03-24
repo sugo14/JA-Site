@@ -13,6 +13,9 @@ const OUTER_LANDSCAPE_RIGHT_ID = ".outer-landscape.right";
 const MOUNTAINS_RIGHT_ID = ".mountains.right";
 const OUTER_MOUNTAINS_RIGHT_ID = ".outer-mountains.right";
 const TWO_INNER_ID = ".two-inner";
+const LIZARD_ID = ".animal.lizard";
+const MONKEY_ID = ".animal.monkey";
+const COUGAR_ID = ".animal.cougar";
 
 let initialized = false;
 let logoSpinAnimation = null;
@@ -162,14 +165,37 @@ function initializeAnimations() {
 		})
 	});
 
+	// Section two body entrance on scroll
 	animate(TWO_INNER_ID, {
 		opacity: [0, 1],
 		y: [30, 0],
 		duration: 500,
 		autoplay: onScroll({
 			enter: 'bottom bottom-=50%',
-			onEnter: (animation) => animation.play()
 		})
+	});
+
+	// Animal entrance on page open
+	animate(LIZARD_ID, {
+		x: [-400, 0],
+		rotate: [90, 0],
+		// ease: spring({ duration: 1500, bounce: 0.25 }),
+		autoplay: onScroll({ target: '.two', enter: 'top top' }),
+		// debug: true
+	});
+	animate(MONKEY_ID, {
+		x: [400, 0],
+		rotate: [30, 0],
+		// ease: spring({ duration: 1500, bounce: 0.25 }),
+		autoplay: onScroll({ target: '.two', enter: 'top top' }),
+		// debug: true
+	});
+	animate(COUGAR_ID, {
+		x: [400, 0],
+		rotate: [90, 0],
+		// ease: spring({ duration: 1500, bounce: 0.25 }),
+		autoplay: onScroll({ target: '.two', enter: 'top top' }),
+		// debug: true
 	});
 }
 

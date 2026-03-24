@@ -76,7 +76,6 @@ main {
     font-size: 40px;
     color: #F3A530;
     margin: 0;
-    z-index: 1;
 
     position: sticky;
     top: 45vh;
@@ -182,7 +181,7 @@ main {
 }
 .tagline-box {
     height: 50vh;
-    background-image: linear-gradient(skyblue, #ffbd59);
+    /* background-image: linear-gradient(skyblue, #ffbd59); */
 }
 
 section.two {
@@ -225,7 +224,7 @@ section.two {
 
 .animal {
     position: absolute;
-    z-index: 0;
+    z-index: 1;
 }
 .lizard {
     top: 20%;
