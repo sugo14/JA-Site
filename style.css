@@ -187,6 +187,7 @@ main {
 
 section.two {
     /* height: 130vh; */
+    position: relative;
     padding-bottom: 100px;
     background-color: #ffbd59;
 }
@@ -196,8 +197,9 @@ section.two {
     justify-content: center;
     align-items: center;
     padding: 20px 10px;
+    gap: 20px;
 
-    background-color: #ff914d;
+    /* background-color: #ff914d; */
     border-radius: 20px;
     margin: 50px 100px 0 100px;
 
@@ -207,6 +209,8 @@ section.two {
 .two-box img {
     width: 35%;
     border-radius: 20px;
+    border: 10px solid #7E3000;
+    transform: rotate(-3deg);
 }
 
 .two-box p {
@@ -217,6 +221,28 @@ section.two {
 .two-box p span {
     color: white;
     font-weight: bold;
+}
+
+.animal {
+    position: absolute;
+    z-index: 0;
+}
+.lizard {
+    top: 20%;
+    left: -10%;
+    width: 30%;
+    transform: rotate(-15deg);
+}
+.monkey {
+    top: 30%;
+    right: -0.5%;
+    width: 15%;
+    transform: rotate(5deg);
+}
+.cougar {
+    bottom: 1%;
+    right: -1%;
+    width: 23%;
 }
 
 .three-inner {

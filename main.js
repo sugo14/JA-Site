@@ -57,7 +57,7 @@ function initializeAnimations() {
 		animate(LOGO_ID, {
 			scale: 1.1,
 			duration: 500,
-			ease: spring({ bounce: .5 })
+			ease: spring({ bounce: .3 })
 		});
 	});
 	LOGO_EL.addEventListener('mouseleave', () => {
@@ -65,7 +65,7 @@ function initializeAnimations() {
 		animate(LOGO_ID, {
 			scale: 1,
 			duration: 500,
-			ease: spring({ bounce: .5 })
+			ease: spring({ bounce: .3 })
 		});
 	});
 
