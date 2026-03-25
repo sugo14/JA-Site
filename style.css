@@ -21,7 +21,7 @@ body {
     margin: 0;
     font-family: 'Lazydog', Arial, Helvetica, sans-serif;
     overflow-x: hidden;
-    background-image: url("./assets/art/background-2.png");
+    background-image: url("./assets/art/background-3.png");
     background-size: cover;
 }
 
@@ -74,8 +74,13 @@ main {
     flex-direction: column;
 }
 
+.text-shadow {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
 .tagline {
     font-size: 40px;
+    font-weight: bold;
     color: #F3A530;
     margin: 0;
 
@@ -187,9 +192,6 @@ main {
     opacity: 0;
 }
 
-.tagline {
-    font-weight: bold;
-}
 .tagline-box {
     height: 50vh;
     margin-top: -130px;
@@ -218,9 +220,9 @@ section.two {
 }
 
 .two-box img {
-    width: 35%;
+    width: 40%;
     border-radius: 20px;
-    border: 10px solid #7E3000;
+    border: 10px solid #913b05;
     transform: rotate(-3deg);
 }
 
@@ -265,16 +267,13 @@ section.two {
     padding: 80px;
 }
 
-.three-inner img {
-    width: 80%;
-    border-radius: 20px;
-}
-
 .three-inner div {
     border-radius: 20px;
     background-color: #FF914D;
     padding: 30px;
-    color: white;
+    color: #1D4934;
+
+    position: relative;
 
     display: flex;
     justify-content: center;
@@ -284,15 +283,64 @@ section.two {
     text-align: center;
 }
 .three-inner h2 {
-    font-size: 50px;
+    font-size: 60px;
+    color: white;
 }
 .three-inner h3 {
     font-size: 30px;
+}
+.three-inner h3 span {
+    color: white;
+    font-weight: bold;
 }
 .three-inner h3 {
     margin: 0;
     margin-bottom: 20px;
 }
+
+.prod-img {
+    width: 80%;
+    border-radius: 20px;
+}
+
+.tape {
+    position: absolute;
+    /* background-color: blue; */
+}
+.tape.tl {
+    top: -30px;
+    left: -50px;
+    transform: rotate(-30deg);
+}
+.tape.tr {
+    top: -30px;
+    right: -50px;
+    transform: rotate(30deg);
+}
+.tape.bl {
+    bottom: -30px;
+    left: -50px;
+    transform: rotate(30deg);
+}
+.tape.br {
+    bottom: -30px;
+    right: -50px;
+    transform: rotate(-30deg);
+}
+.tape.ttr {
+    top: -30px;
+    right: 60px;
+    right: 40%;
+    transform: translateX(50%) rotate(4deg);
+}
+.tape.t {
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+}
+.tape.s { width: 125px; }
+.tape.m { width: 160px; }
+.tape.l { width: 190px; }
 
 footer {
     background-color: skyblue;

@@ -80,31 +80,31 @@ function initializeAnimations() {
 
 	// Landscape entrance on page open
 	animate(LANDSCAPE_LEFT_ID, {
-		x: [-600, -100],
-		rotate: [90, 0],
+		x: [-700, -100],
+		rotate: [30, 0],
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_LEFT_ID, {
-		x: [-400, -100],
-		rotate: [-90, 0],
+		x: [-500, -100],
+		rotate: [-30, 0],
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
 	animate(LANDSCAPE_RIGHT_ID, {
-		x: [600, 100],
-		rotate: [-90, 0],
+		x: [700, 100],
+		rotate: [-30, 0],
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_RIGHT_ID, {
-		x: [400, 100],
-		rotate: [90, 0],
+		x: [500, 100],
+		rotate: [30, 0],
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
 
 	// Landscape exit on scroll
 	animate(OUTER_LANDSCAPE_LEFT_ID, {
-		x: [0, -500],
+		x: [0, -600],
 		y: [0, 300],
-		rotate: [0, 90],
+		rotate: [0, 30],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=250',
@@ -114,9 +114,9 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_LANDSCAPE_RIGHT_ID, {
-		x: [0, 500],
+		x: [0, 600],
 		y: [0, 300],
-		rotate: [0, -90],
+		rotate: [0, -30],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=250',
@@ -126,9 +126,9 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_LEFT_ID, {
-		x: [0, -300],
+		x: [0, -500],
 		y: [0, 150],
-		rotate: [0, 90],
+		rotate: [0, 30],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=100',
@@ -138,9 +138,9 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_RIGHT_ID, {
-		x: [0, 300],
+		x: [0, 500],
 		y: [0, 150],
-		rotate: [0, -90],
+		rotate: [0, -30],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=100',
@@ -208,7 +208,7 @@ function initializeAnimations() {
 		el.addEventListener('mouseenter', () => {
 			const X_OFFSET = randRange(-20, 20), Y_OFFSET = randRange(-20, 20), ROTATE_OFFSET = randRange(-10, 10);
 			animate(el, {
-				scale: 1.05,
+				scale: 1.1,
 				x: X_OFFSET,
 				y: Y_OFFSET,
 				rotate: ROTATE_OFFSET,
@@ -232,7 +232,7 @@ function initializeAnimations() {
 	TEAM_PHOTO_EL.addEventListener('mouseenter', () => {
 		const X_OFFSET = randRange(-20, 20), Y_OFFSET = randRange(-20, 20), ROTATE_OFFSET = randRange(-10, 10);
 		animate(TEAM_PHOTO_EL, {
-			scale: 1.05,
+			scale: 1.1,
 			x: X_OFFSET,
 			y: Y_OFFSET,
 			rotate: [-3, ROTATE_OFFSET],
@@ -256,7 +256,7 @@ window.addEventListener('load', () => {
 	document.body.classList.add('is-loaded');
 	initializeAnimations();
 	window.addEventListener('scroll', () => {
-		const offset = window.scrollY * 0.6;
+		const offset = window.scrollY * 0.5;
 		document.body.style.backgroundPosition = `0px ${offset}px`;
 	});
 });
