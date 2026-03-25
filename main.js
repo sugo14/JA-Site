@@ -16,11 +16,17 @@ const TWO_INNER_ID = ".two-inner";
 const LIZARD_ID = ".animal.lizard";
 const MONKEY_ID = ".animal.monkey";
 const COUGAR_ID = ".animal.cougar";
+const POPOUT_HOVER_ID = ".popout-hover";
+const TEAM_PHOTO_ID = ".two-box img";
 
 let initialized = false;
 let logoSpinAnimation = null;
 
 const LOGO_EL = document.querySelector(LOGO_ID);
+
+function randRange(min, max) {
+	return Math.random() * (max - min) + min;
+}
 
 function startLogoSpin(dur) {
 	if (logoSpinAnimation) {
@@ -197,9 +203,60 @@ function initializeAnimations() {
 		autoplay: onScroll({ target: '.two', enter: 'top top' }),
 		// debug: true
 	});
+
+	document.querySelectorAll(POPOUT_HOVER_ID).forEach(el => {
+		el.addEventListener('mouseenter', () => {
+			const X_OFFSET = randRange(-20, 20), Y_OFFSET = randRange(-20, 20), ROTATE_OFFSET = randRange(-10, 10);
+			animate(el, {
+				scale: 1.05,
+				x: X_OFFSET,
+				y: Y_OFFSET,
+				rotate: ROTATE_OFFSET,
+				duration: 300,
+				ease: spring({ bounce: .3 })
+			});
+		});
+		el.addEventListener('mouseleave', () => {
+			animate(el, {
+				scale: 1,
+				x: 0,
+				y: 0,
+				rotate: 0,
+				duration: 300,
+				ease: spring({ bounce: .3 })
+			});
+		});
+	});
+
+	const TEAM_PHOTO_EL = document.querySelector(TEAM_PHOTO_ID);
+	TEAM_PHOTO_EL.addEventListener('mouseenter', () => {
+		const X_OFFSET = randRange(-20, 20), Y_OFFSET = randRange(-20, 20), ROTATE_OFFSET = randRange(-10, 10);
+		animate(TEAM_PHOTO_EL, {
+			scale: 1.05,
+			x: X_OFFSET,
+			y: Y_OFFSET,
+			rotate: [-3, ROTATE_OFFSET],
+			duration: 300,
+			ease: spring({ bounce: .3 })
+		});
+	});
+	TEAM_PHOTO_EL.addEventListener('mouseleave', () => {
+		animate(TEAM_PHOTO_EL, {
+			scale: 1,
+			x: 0,
+			y: 0,
+			rotate: -3,
+			duration: 300,
+			ease: spring({ bounce: .3 })
+		});
+	});
 }
 
 window.addEventListener('load', () => {
 	document.body.classList.add('is-loaded');
 	initializeAnimations();
+	window.addEventListener('scroll', () => {
+		const offset = window.scrollY * 0.6;
+		document.body.style.backgroundPosition = `0px ${offset}px`;
+	});
 });
