@@ -85,7 +85,7 @@ function initializeAnimations() {
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_LEFT_ID, {
-		x: [-500, -100],
+		x: [-400, -100],
 		rotate: [-30, 0],
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
@@ -95,14 +95,14 @@ function initializeAnimations() {
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_RIGHT_ID, {
-		x: [500, 100],
+		x: [400, 100],
 		rotate: [30, 0],
 		ease: spring({ duration: 1500, bounce: 0.25 })
 	});
 
 	// Landscape exit on scroll
 	animate(OUTER_LANDSCAPE_LEFT_ID, {
-		x: [0, -600],
+		x: [0, -700],
 		y: [0, 300],
 		rotate: [0, 30],
 		ease: 'linear',
@@ -114,7 +114,7 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_LANDSCAPE_RIGHT_ID, {
-		x: [0, 600],
+		x: [0, 700],
 		y: [0, 300],
 		rotate: [0, -30],
 		ease: 'linear',
@@ -126,7 +126,7 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_LEFT_ID, {
-		x: [0, -500],
+		x: [0, -400],
 		y: [0, 150],
 		rotate: [0, 30],
 		ease: 'linear',
@@ -138,7 +138,7 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_RIGHT_ID, {
-		x: [0, 500],
+		x: [0, 400],
 		y: [0, 150],
 		rotate: [0, -30],
 		ease: 'linear',
