@@ -1,3 +1,12 @@
+:root {
+    --light-orange: #FF914D;
+    --yellow: #F3A530;
+    --orange: #E86910;
+    --green: #234320;
+    --white: white;
+    --frame-color: #913b05;
+}
+
 @font-face {
     font-family: 'Lazydog';
     src: url('./assets/fonts/Lazydog.otf') format('opentype');
@@ -26,14 +35,19 @@ body {
 }
 
 nav {
-    width: calc(100vw - 20px);
-    height: 40px;
-    background-color: skyblue;
+    width: 100%;
+    height: 70px;
+
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 0;
+    left: 0;
 
     display: flex;
     justify-content: right;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 25px;
 }
 
 nav .logo {
@@ -49,16 +63,22 @@ nav .logo {
 
 nav a {
     margin-right: 30px;
-    color: white;
+    color: var(--yellow);
     text-decoration: none;
     margin-top: 20px;
     font-size: 25px;
+
+    transition: color 0.15s cubic-bezier(0.42, 0, 0.58, 1), transform 0.15s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+nav a:hover {
+    color: var(--white);
+    transform: scale(1.1);
 }
 
 nav p {
     margin: 0;
     margin-right: 30px;
-    color: black;
     margin-top: 20px;
     font-size: 25px;
 }
@@ -81,7 +101,7 @@ main {
 .tagline {
     font-size: 40px;
     font-weight: bold;
-    color: #F3A530;
+    color: var(--white);
     margin: 0;
 
     position: sticky;
@@ -93,7 +113,7 @@ main {
     will-change: transform;
 }
 .tagline span {
-    color: #E86910;
+    color: var(--orange);
 }
 
 .landing-logo {
@@ -108,7 +128,7 @@ main {
 }
 
 .landing-logo .centre {
-    /* background-color: yellow;
+    /* background-color: light-orange;
     border-radius: 100%; */
     width: 65vh;
 
@@ -166,12 +186,6 @@ main {
     right: 5%;
 }
 
-.spacer {
-    height: 200vh;
-    width: 10px;
-    background-color: blue;
-}
-
 /* transform elements to animation start position */
 .landing-logo {
     transform: translateY(-600px);
@@ -193,7 +207,7 @@ main {
 }
 
 .tagline-box {
-    height: 50vh;
+    height: 80vh;
     margin-top: -130px;
     /* background-image: linear-gradient(skyblue, #ffbd59); */
 }
@@ -203,6 +217,7 @@ section.two {
     position: relative;
     padding-bottom: 100px;
     /* background-color: #ffbd59; */
+    margin-bottom: 150px;
 }
 
 .two-box {
@@ -216,13 +231,13 @@ section.two {
     border-radius: 20px;
     margin: 50px 100px 0 100px;
 
-    color: #234320;
+    color: var(--green);
 }
 
 .two-box img {
     width: 40%;
     border-radius: 20px;
-    border: 10px solid #913b05;
+    border: 10px solid var(--frame-color);
     transform: rotate(-3deg);
 }
 
@@ -232,7 +247,7 @@ section.two {
     margin-left: 50px;
 }
 .two-box p span {
-    color: white;
+    color: var(--white);
     font-weight: bold;
 }
 
@@ -241,13 +256,13 @@ section.two {
     z-index: 1;
 }
 .lizard {
-    top: 20%;
+    top: 35%;
     left: -10%;
     width: 30%;
     transform: rotate(-15deg);
 }
 .monkey {
-    top: 30%;
+    top: 45%;
     right: -0.5%;
     width: 15%;
     transform: rotate(5deg);
@@ -269,9 +284,9 @@ section.two {
 
 .three-inner div {
     border-radius: 20px;
-    background-color: #FF914D;
+    background-color: var(--light-orange);
     padding: 30px;
-    color: #234320;
+    color: var(--green);
 
     position: relative;
 
@@ -284,13 +299,13 @@ section.two {
 }
 .three-inner h2 {
     font-size: 55px;
-    color: white;
+    color: var(--white);
 }
 .three-inner h3 {
     font-size: 30px;
 }
 .three-inner h3 span {
-    color: white;
+    color: var(--white);
     font-weight: bold;
 }
 .three-inner h3 {
@@ -343,7 +358,24 @@ section.two {
 .tape.l { width: 190px; }
 
 footer {
-    background-color: skyblue;
+    margin-top: 50px;
+    background-color: #234320;
     width: 100%;
     height: 100px;
+    position: relative;
+}
+footer .l {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 100px;
+}
+footer .r {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.landing-logo {
 }

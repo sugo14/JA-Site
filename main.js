@@ -81,30 +81,30 @@ function initializeAnimations() {
 	// Landscape entrance on page open
 	animate(LANDSCAPE_LEFT_ID, {
 		x: [-700, -100],
-		rotate: [30, 0],
-		ease: spring({ duration: 1500, bounce: 0.25 })
+		rotate: [60, 0],
+		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_LEFT_ID, {
-		x: [-400, -100],
-		rotate: [-30, 0],
-		ease: spring({ duration: 1500, bounce: 0.25 })
+		x: [-500, -100],
+		rotate: [-60, 0],
+		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
 	animate(LANDSCAPE_RIGHT_ID, {
 		x: [700, 100],
-		rotate: [-30, 0],
-		ease: spring({ duration: 1500, bounce: 0.25 })
+		rotate: [-60, 0],
+		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_RIGHT_ID, {
-		x: [400, 100],
-		rotate: [30, 0],
-		ease: spring({ duration: 1500, bounce: 0.25 })
+		x: [500, 100],
+		rotate: [60, 0],
+		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
 
 	// Landscape exit on scroll
 	animate(OUTER_LANDSCAPE_LEFT_ID, {
 		x: [0, -700],
 		y: [0, 300],
-		rotate: [0, 30],
+		rotate: [0, 60],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=250',
@@ -116,7 +116,7 @@ function initializeAnimations() {
 	animate(OUTER_LANDSCAPE_RIGHT_ID, {
 		x: [0, 700],
 		y: [0, 300],
-		rotate: [0, -30],
+		rotate: [0, -60],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=250',
@@ -126,9 +126,9 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_LEFT_ID, {
-		x: [0, -400],
+		x: [0, -300],
 		y: [0, 150],
-		rotate: [0, 30],
+		rotate: [0, 60],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=100',
@@ -138,9 +138,9 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_RIGHT_ID, {
-		x: [0, 400],
+		x: [0, 300],
 		y: [0, 150],
-		rotate: [0, -30],
+		rotate: [0, -60],
 		ease: 'linear',
 		autoplay: onScroll({
 			enter: 'top top-=100',
@@ -165,7 +165,7 @@ function initializeAnimations() {
 		autoplay: onScroll({
 			target: PAGE_SCROLL_TARGET_ID,
 			enter: 'top top+=35vh',
-			leave: 'top top+=75vh',
+			leave: 'top top+=100vh',
 			sync: .8,
 			// debug: true,
 		})
@@ -256,7 +256,7 @@ window.addEventListener('load', () => {
 	document.body.classList.add('is-loaded');
 	initializeAnimations();
 	window.addEventListener('scroll', () => {
-		const offset = window.scrollY * 0.5;
+		const offset = window.scrollY * 0.7;
 		document.body.style.backgroundPosition = `0px ${offset}px`;
 	});
 });
