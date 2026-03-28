@@ -80,22 +80,22 @@ function initializeAnimations() {
 
 	// Landscape entrance on page open
 	animate(LANDSCAPE_LEFT_ID, {
-		x: [-700, -100],
+		x: [-700, 0],
 		rotate: [60, 0],
 		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_LEFT_ID, {
-		x: [-500, -100],
+		x: [-500, 0],
 		rotate: [-60, 0],
 		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
 	animate(LANDSCAPE_RIGHT_ID, {
-		x: [700, 100],
+		x: [700, 0],
 		rotate: [-60, 0],
 		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
 	animate(MOUNTAINS_RIGHT_ID, {
-		x: [500, 100],
+		x: [500, 0],
 		rotate: [60, 0],
 		ease: spring({ duration: 2000, bounce: 0.25 })
 	});
