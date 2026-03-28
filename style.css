@@ -403,6 +403,14 @@ footer .r {
     transform: translateY(-50%);
 }
 
+@media (max-width: 1200px) {
+    .three-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 60px;
+        /* gap: 50px; */
+    }
+}
+
 @media (max-width: 1000px) {
     .animal { 
         display: none;
@@ -411,10 +419,21 @@ footer .r {
     .two-box {
         flex-direction: column;
         padding: 0px;
-        gap: 20px;
     }
     .two-box img, .two-box p {
         width: 100%;
+        margin: 20px 0;
+    }
+    
+    section.two {
+        padding-bottom: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    .three-inner {
+        grid-template-columns: 1fr;
+        padding: 60px;
     }
 }
 
@@ -438,11 +457,6 @@ footer .r {
     .two-box p {
         margin-left: 0;
         margin-top: 20px;
-    }
-
-    .three-inner {
-        grid-template-columns: 1fr;
-        padding: 60px;
     }
 
     .mountains img {
@@ -481,5 +495,10 @@ footer .r {
     }
     .tagline {
         font-size: 35px;
+        width: min(88vw, 14ch);
+        margin-inline: auto;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.1;
     }
 }

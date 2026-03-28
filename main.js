@@ -158,8 +158,12 @@ function initializeAnimations() {
 		delay: 500
 	});
 	// Make sticky tagline grow while scrolling through section two
+	const IS_MOBILE_VIEW = window.matchMedia('(max-width: 700px)').matches;
+	const TAGLINE_GROW_PROPS = IS_MOBILE_VIEW
+		? { fontSize: ['35px', '52px'] }
+		: { scale: [1, 1.5] };
 	animate(TAGLINE_ID, {
-		scale: [1, 1.5],
+		...TAGLINE_GROW_PROPS,
 		color: ['#F3A530', '#FFF'],
 		ease: 'linear',
 		autoplay: onScroll({
