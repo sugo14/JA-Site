@@ -53,7 +53,6 @@ nav {
 nav .logo {
     height: 50px;
     width: 50px;
-    border-radius: 100%;
 
     position: absolute;
     top: 17px;
@@ -61,7 +60,7 @@ nav .logo {
     transform: translate(-50%, 0);
 }
 
-nav a {
+.nav-link {
     margin-right: 30px;
     color: var(--yellow);
     text-decoration: none;
@@ -71,7 +70,7 @@ nav a {
     transition: color 0.15s cubic-bezier(0.42, 0, 0.58, 1), transform 0.15s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-nav a:hover {
+.nav-link:hover {
     color: var(--white);
     transform: scale(1.1);
 }
@@ -81,6 +80,7 @@ nav p {
     margin-right: 30px;
     margin-top: 20px;
     font-size: 25px;
+    color: var(--white);
 }
 
 main {
