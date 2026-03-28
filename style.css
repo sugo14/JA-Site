@@ -14,6 +14,10 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .unselectable {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari, Chrome, Opera, Android */
@@ -30,8 +34,10 @@ body {
     margin: 0;
     font-family: 'Lazydog', Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+
     background-image: url("./assets/art/background-3.png");
     background-size: cover;
+    background-position: 50% 0;
 }
 
 nav {
@@ -124,13 +130,13 @@ main {
 
 .landing-logo .outer {
     /* background-color: orange; */
-    height: 65vh;
+    height: min(65vh, 80vw);
 }
 
 .landing-logo .centre {
     /* background-color: light-orange;
     border-radius: 100%; */
-    width: 65vh;
+    height: min(65vh, 80vw);
 
     position: absolute;
     top: 50%;
@@ -209,6 +215,7 @@ main {
 .tagline-box {
     height: 80vh;
     margin-top: -130px;
+    position: relative;
     /* background-image: linear-gradient(skyblue, #ffbd59); */
 }
 
@@ -249,6 +256,13 @@ section.two {
 .two-box p span {
     color: var(--white);
     font-weight: bold;
+}
+
+#about {
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+    background-color: red;
 }
 
 .animal {
@@ -377,5 +391,53 @@ footer .r {
     transform: translateY(-50%);
 }
 
-.landing-logo {
+@media (max-width: 900px) {
+    .two-box {
+        flex-direction: column;
+        padding: 0px;
+    }
+    .two-box img, .two-box p {
+        width: 100%;
+    }
+    .two-box p {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .three-inner {
+        grid-template-columns: 1fr;
+        padding: 60px;
+    }
+
+    .mountains img {
+        object-fit: fill;
+    }
+    .outer-mountains {
+        width: 40%;
+        height: 40%;
+    }
+    .outer-mountains.left {
+        bottom: 20%;
+        left: 18%;
+    }
+    .outer-mountains.right {
+        bottom: 20%;
+        right: 18%;
+    }
+
+
+    .landscape img {
+        object-fit: fill;
+    }
+    .outer-landscape {
+        width: 80%;
+        height: 60%;
+        bottom: -30%;
+    }
+    .outer-landscape.left {
+        left: 0%;
+    }
+    .outer-landscape.right {
+        right: 0%;
+    }
 }

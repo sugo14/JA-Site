@@ -256,7 +256,7 @@ window.addEventListener('load', () => {
 	document.body.classList.add('is-loaded');
 	initializeAnimations();
 	window.addEventListener('scroll', () => {
-		const offset = window.scrollY * 0.7;
+		const offset = window.scrollY * 0.5;
 		document.body.style.backgroundPosition = `0px ${offset}px`;
 	});
 });
