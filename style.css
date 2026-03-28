@@ -205,21 +205,15 @@ main {
     right: 0%;
 }
 
+/* Prevent first-paint flash before JS sets initial animation state */
+body:not(.is-loaded) .outer-landscape,
+body:not(.is-loaded) .outer-mountains {
+    visibility: hidden;
+}
+
 /* transform elements to animation start position */
 .landing-logo {
-    transform: translateY(-600px);
-}
-.landscape.left {
-    transform: translateX(-600px) rotate(90deg);
-}
-.landscape.right {
-    transform: translateX(600px) rotate(-90deg);
-}
-.mountains.left {
-    transform: translateX(-400px) rotate(-90deg);
-}
-.mountains.right {
-    transform: translateX(400px) rotate(90deg);
+    transform: translateY(-110vh);
 }
 .tagline {
     opacity: 0;

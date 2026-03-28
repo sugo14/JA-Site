@@ -21,6 +21,7 @@ const TEAM_PHOTO_ID = ".two-box img";
 
 let initialized = false;
 let logoSpinAnimation = null;
+let bootstrapped = false;
 
 const LOGO_EL = document.querySelector(LOGO_ID);
 
@@ -54,7 +55,7 @@ function initializeAnimations() {
 	});
 	// Logo entrance on page open
 	animate(LOGO_ID, {
-		y: [-600, 0],
+		y: ['-110vh', 0],
 		duration: 2500
 	});
 	// Rotate the outer logo
@@ -80,29 +81,29 @@ function initializeAnimations() {
 
 	// Landscape entrance on page open
 	animate(LANDSCAPE_LEFT_ID, {
-		x: [-700, 0],
+		x: ['-150%', 0],
 		rotate: [60, 0],
-		ease: spring({ duration: 2000, bounce: 0.25 })
+		ease: spring({ duration: 2000, bounce: 0.2 })
 	});
 	animate(MOUNTAINS_LEFT_ID, {
-		x: [-500, 0],
+		x: ['-140%', 0],
 		rotate: [-60, 0],
-		ease: spring({ duration: 2000, bounce: 0.25 })
+		ease: spring({ duration: 2000, bounce: 0.2 })
 	});
 	animate(LANDSCAPE_RIGHT_ID, {
-		x: [700, 0],
+		x: ['150%', 0],
 		rotate: [-60, 0],
-		ease: spring({ duration: 2000, bounce: 0.25 })
+		ease: spring({ duration: 2000, bounce: 0.2 })
 	});
 	animate(MOUNTAINS_RIGHT_ID, {
-		x: [500, 0],
+		x: ['140%', 0],
 		rotate: [60, 0],
-		ease: spring({ duration: 2000, bounce: 0.25 })
+		ease: spring({ duration: 2000, bounce: 0.2 })
 	});
 
 	// Landscape exit on scroll
 	animate(OUTER_LANDSCAPE_LEFT_ID, {
-		x: [0, -700],
+		x: ['-3%', '-150%'],
 		y: [0, 300],
 		rotate: [0, 60],
 		ease: 'linear',
@@ -114,7 +115,7 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_LANDSCAPE_RIGHT_ID, {
-		x: [0, 700],
+		x: ['3%', '150%'],
 		y: [0, 300],
 		rotate: [0, -60],
 		ease: 'linear',
@@ -126,7 +127,7 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_LEFT_ID, {
-		x: [0, -300],
+		x: ['-4%', '-100%'],
 		y: [0, 150],
 		rotate: [0, 60],
 		ease: 'linear',
@@ -138,7 +139,7 @@ function initializeAnimations() {
 		})
 	});
 	animate(OUTER_MOUNTAINS_RIGHT_ID, {
-		x: [0, 300],
+		x: ['5%', '100%'],
 		y: [0, 150],
 		rotate: [0, -60],
 		ease: 'linear',
@@ -256,11 +257,21 @@ function initializeAnimations() {
 	});
 }
 
-window.addEventListener('load', () => {
+function bootstrapPageAnimations() {
+	if (bootstrapped) { return; }
+	bootstrapped = true;
+
 	document.body.classList.add('is-loaded');
 	initializeAnimations();
 	window.addEventListener('scroll', () => {
 		const offset = window.scrollY * 0.5;
 		document.body.style.backgroundPosition = `0px ${offset}px`;
-	});
-});
+	}, { passive: true });
+}
+
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', bootstrapPageAnimations, { once: true });
+	window.addEventListener('load', bootstrapPageAnimations, { once: true });
+} else {
+	bootstrapPageAnimations();
+}
