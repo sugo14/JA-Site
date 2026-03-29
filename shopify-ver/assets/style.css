@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Lazydog';
-    src: url("{{ 'Lazydog.otf' | asset_url }}") format('opentype');
+    src: url("./Lazydog.otf") format('opentype');
     font-weight: 400;
     font-style: normal;
 }
@@ -35,10 +35,15 @@ body {
     font-family: 'Lazydog', Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 
-    background-image: url("{{ 'background-3.png' | asset_url }}");
+    background-image: url("./background-3.png");
     background-size: cover;
     background-position: 50% 0;
     will-change: background-position;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Lazydog', Arial, Helvetica, sans-serif !important;
 }
 
 nav {
@@ -328,6 +333,8 @@ section.two {
 .three-inner h2 {
     font-size: 55px;
     color: var(--white);
+    margin: 0;
+    line-height: 1;
 }
 .three-inner h3 {
     font-size: 30px;
@@ -345,6 +352,10 @@ section.two {
 
 .prod-img {
     height: 175px;
+    width: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
     border-radius: 20px;
 }
 
@@ -387,12 +398,12 @@ section.two {
 .tape.m { width: 160px; }
 .tape.l { width: 190px; }
 
-footer {
+footer#contact {
     margin-top: 50px;
     background-color: var(--green);
     width: 100%;
     position: relative;
-    padding: 20px 40px;
+    padding: 30px 40px;
     box-sizing: border-box;
 
     color: white;
@@ -401,20 +412,40 @@ footer {
     display: flex;
     justify-content: space-between;
 }
-footer .l {
+footer#contact .l {
     width: 50%;
 }
-footer .r {
-    text-align: right;
+footer#contact .r {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    gap: 5px;
+    height: 100%;
 }
-.insta-logo {
-    height: 50px;
-    margin-top: 5px;
+
+footer#contact .r div {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+body > footer:not(#contact) {
+    display: none !important;
+}
+.link-logo {
+    margin-top: -5px;
     transition: transform 0.15s cubic-bezier(0.42, 0, 0.58, 1);
     transform-origin: center center;
 }
-.insta-logo:hover {
+.link-logo:hover {
     transform: scale(1.1);
+}
+.link-logo.insta {
+    height: 45px;
+}
+.link-logo.email {
+    height: 45px;
 }
 
 .shop-link {
