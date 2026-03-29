@@ -336,7 +336,7 @@ section.two {
 }
 .three-inner h4 {
     font-size: 35px;
-    margin: 83px 0;
+    margin: 70px 0;
 }
 .three-inner span {
     color: var(--white);
@@ -453,6 +453,11 @@ footer .r {
     .three-inner {
         grid-template-columns: 1fr;
         padding: 60px;
+    }
+
+    footer .l {
+        width: 100%;
+        margin-right: 50px;
     }
 }
 
