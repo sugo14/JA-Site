@@ -18,6 +18,7 @@ const MONKEY_ID = ".animal.monkey";
 const COUGAR_ID = ".animal.cougar";
 const POPOUT_HOVER_ID = ".popout-hover";
 const TEAM_PHOTO_ID = ".two-box img";
+const SHOP_LINK_ID = ".shop-link";
 
 let initialized = false;
 let logoSpinAnimation = null;
@@ -230,6 +231,13 @@ function initializeAnimations() {
 				duration: 300,
 				ease: spring({ bounce: .3 })
 			});
+		});
+	});
+
+	document.querySelectorAll(SHOP_LINK_ID).forEach(link => {
+		link.addEventListener('click', event => {
+			event.preventDefault();
+			window.alert('Online shopping available soon!');
 		});
 	});
 

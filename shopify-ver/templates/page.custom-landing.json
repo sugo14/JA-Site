@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-landing"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

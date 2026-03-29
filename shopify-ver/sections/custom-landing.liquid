@@ -1,0 +1,116 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+
+<nav class="text-shadow">
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#shop">Shop</a>
+    <a class="nav-link" href="#contact">Contact</a>
+</nav>
+
+<main>
+    <div class="outer-mountains left">
+        <div class="mountains left">
+            <img class="unselectable" src="{{ 'mountains-l-cropped.png' | asset_url }}">
+        </div>
+    </div>
+    <div class="outer-mountains right">
+        <div class="mountains right">
+            <img class="unselectable" src="{{ 'mountains-r-cropped.png' | asset_url }}">
+        </div>
+    </div>
+    <div class="outer-landscape left">
+        <div class="landscape left">
+            <img class="unselectable" src="{{ 'bush-l-cropped.png' | asset_url }}">
+        </div>
+    </div>
+    <div class="outer-landscape right">
+        <div class="landscape right">
+            <img class="unselectable" src="{{ 'bush-r-cropped.png' | asset_url }}">
+        </div>
+    </div>
+    <div class="landing-logo">
+        <img class="centre unselectable" src="{{ 'logo-inner.png' | asset_url }}">
+        <img class="outer unselectable" src="{{ 'logo-outer.png' | asset_url }}">
+    </div>
+</main>
+
+<section class="two">
+    <div class="tagline-box">
+        <h2 class="tagline text-shadow">AWARENESS THAT <span>STICKS</span>.</h2>
+        <div id="about"></div>
+    </div>
+    <div class="two-inner">
+        <div class="two-box">
+            <img src="{{ 'team.jpg' | asset_url }}">
+            <p>
+                Reo means <span>voice</span> in Maori, an endangered language native to the land that is now New Zealand.<br><br>
+                We aim to provide awareness about endangered animals, <span>being the voice for those who don't have one</span>. 
+            </p>
+        </div>
+    </div>
+    <img class="animal monkey unselectable" src="{{ 'monkey.png' | asset_url }}">
+    <img class="animal lizard unselectable" src="{{ 'lizard.png' | asset_url }}">
+    <img class="animal cougar unselectable" src="{{ 'cougar.png' | asset_url }}">
+</section>
+
+<section class="three" id="shop">
+    <div class="three-inner">
+        <div>
+            <h2 class="text-shadow">Our<br>Products</h2>
+            <img class="tape t l unselectable" src="{{ 'tape-1.png' | asset_url }}">
+        </div>
+        <a class="shop-link" href="/shop/polar-bear.html">
+            <div class="popout-hover">
+                <h3><span class="text-shadow">Gloria</span> the Polar Bear</h3>
+                <img class="tape tl m unselectable" src="{{ 'tape-2.png' | asset_url }}">
+                <img class="prod-img" src="{{ 'polar-bear-cropped.png' | asset_url }}">
+            </div>
+        </a>
+        <a class="shop-link" href="/shop/amur-leopard.html">
+            <div class="popout-hover">
+                <h3><span class="text-shadow">Nastya</span> the Amur Leopard</h3>
+                <img class="tape tr s unselectable" src="{{ 'tape-3.png' | asset_url }}">
+                <img class="tape bl m unselectable" src="{{ 'tape-1.png' | asset_url }}">
+                <img class="prod-img" src="{{ 'amur-leopard-cropped.png' | asset_url }}">
+            </div>
+        </a>
+        <div>
+            <h4>And more, coming on <span class="text-shadow">April 15th</span>!</h4>
+            <img class="tape tl s unselectable" src="{{ 'tape-3.png' | asset_url }}">
+            <img class="tape tr m unselectable" src="{{ 'tape-2.png' | asset_url }}">
+        </div>
+        <!-- <div class="popout-hover">
+            <h3><span>Leo</span> the Tiger</h3>
+            <img class="tape tl s unselectable" src="/assets/tape/tape-3.png">
+            <img class="tape tr m unselectable" src="/assets/tape/tape-2.png">
+            <img class="prod-img" src="/assets/img/team.jpg">
+        </div>
+        <div class="popout-hover">
+            <h3><span>Leo</span> the Tiger</h3>
+            <img class="tape ttr s unselectable" src="/assets/tape/tape-1.png">
+            <img class="prod-img" src="/assets/img/team.jpg">
+        </div> -->
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="l">
+        <p>
+            We acknowledge that the land on which we operate is Treaty 6 territory and a traditional meeting ground and home for many Indigenous peoples.
+        </p>
+    </div>
+    <div class="r">
+        <a href="https://www.instagram.com/reo_.ja/" target="_blank">
+            <img src="{{ 'instagram-logo.svg' | asset_url }}" class="insta-logo unselectable">
+        </a>
+    </div>
+</footer>
+
+{% comment %} <script type="module" src="/main.js"></script> {% endcomment %}
+<script type="module" src="{{ 'main.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Custom landing",
+  "settings": []
+}
+{% endschema %}
