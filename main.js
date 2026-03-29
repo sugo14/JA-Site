@@ -49,10 +49,10 @@ function initializeAnimations() {
 	initialized = true;
 
 	// Make the logo draggable around its center
-	createDraggable(LOGO_ID, {
-		container: [0, 0, 0, 0],
-		releaseEase: spring({ bounce: .5 })
-	});
+	// createDraggable(LOGO_ID, {
+	// 	container: [0, 0, 0, 0],
+	// 	releaseEase: spring({ bounce: .5 })
+	// });
 	// Logo entrance on page open
 	animate(LOGO_ID, {
 		y: ['-110vh', 0],
@@ -233,28 +233,28 @@ function initializeAnimations() {
 		});
 	});
 
-	const TEAM_PHOTO_EL = document.querySelector(TEAM_PHOTO_ID);
-	TEAM_PHOTO_EL.addEventListener('mouseenter', () => {
-		const X_OFFSET = randRange(-20, 20), Y_OFFSET = randRange(-20, 20), ROTATE_OFFSET = randRange(-10, 10);
-		animate(TEAM_PHOTO_EL, {
-			scale: 1.1,
-			x: X_OFFSET,
-			y: Y_OFFSET,
-			rotate: [-3, ROTATE_OFFSET],
-			duration: 300,
-			ease: spring({ bounce: .3 })
-		});
-	});
-	TEAM_PHOTO_EL.addEventListener('mouseleave', () => {
-		animate(TEAM_PHOTO_EL, {
-			scale: 1,
-			x: 0,
-			y: 0,
-			rotate: -3,
-			duration: 300,
-			ease: spring({ bounce: .3 })
-		});
-	});
+	// const TEAM_PHOTO_EL = document.querySelector(TEAM_PHOTO_ID);
+	// TEAM_PHOTO_EL.addEventListener('mouseenter', () => {
+	// 	const X_OFFSET = randRange(-20, 20), Y_OFFSET = randRange(-20, 20), ROTATE_OFFSET = randRange(-10, 10);
+	// 	animate(TEAM_PHOTO_EL, {
+	// 		scale: 1.1,
+	// 		x: X_OFFSET,
+	// 		y: Y_OFFSET,
+	// 		rotate: [-3, ROTATE_OFFSET],
+	// 		duration: 300,
+	// 		ease: spring({ bounce: .3 })
+	// 	});
+	// });
+	// TEAM_PHOTO_EL.addEventListener('mouseleave', () => {
+	// 	animate(TEAM_PHOTO_EL, {
+	// 		scale: 1,
+	// 		x: 0,
+	// 		y: 0,
+	// 		rotate: -3,
+	// 		duration: 300,
+	// 		ease: spring({ bounce: .3 })
+	// 	});
+	// });
 }
 
 function bootstrapPageAnimations() {

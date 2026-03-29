@@ -38,6 +38,7 @@ body {
     background-image: url("./assets/art/background-3.png");
     background-size: cover;
     background-position: 50% 0;
+    will-change: background-position;
 }
 
 nav {
@@ -268,7 +269,6 @@ section.two {
     position: absolute;
     bottom: 0;
     height: 150px;
-    background-color: red;
 }
 
 .animal {
@@ -323,18 +323,16 @@ section.two {
 }
 .three-inner h3 {
     font-size: 30px;
-}
-.three-inner h3 span {
-    color: var(--white);
-    font-weight: bold;
-}
-.three-inner h3 {
     margin: 0;
     margin-bottom: 20px;
 }
+.three-inner span {
+    color: var(--white);
+    font-weight: bold;
+}
 
 .prod-img {
-    width: 80%;
+    height: 175px;
     border-radius: 20px;
 }
 
@@ -379,9 +377,9 @@ section.two {
 
 footer {
     margin-top: 50px;
-    background-color: #234320;
+    background-color: var(--green);
     width: 100%;
-    height: 100px;
+    height: 120px;
     position: relative;
 }
 footer .l {
@@ -396,6 +394,11 @@ footer .r {
     top: 50%;
     transform: translateY(-50%);
 }
+
+.shop-link {
+    text-decoration: none;
+}
+
 
 @media (max-width: 1200px) {
     .three-inner {
@@ -495,4 +498,43 @@ footer .r {
         overflow-wrap: anywhere;
         line-height: 1.1;
     }
+}
+
+.item-title {
+    font-size: 60px;
+    color: var(--white);
+    margin: 0;
+}
+
+.shop-item-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 60%;
+}
+
+.shop-item-box .l, .shop-item-box .r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px;
+    background-color: #fcdd5f80;
+    width: 40%;
+    border-radius: 20px;
+}
+/* .shop-item-box .l {
+    width: 40%;
+    height: 100%;
+}
+.shop-item-box .r {
+    width: 40%;
+    height: 100%;
+} */
+
+.shop-item-box .l img {
+    width: 80%;
+
+    border-radius: 20px;
 }
