@@ -7,6 +7,7 @@ const SHOP_LEFT_ID = ".shop-item-box .l";
 const SHOP_RIGHT_ID = ".shop-item-box .r";
 const POPOUT_HOVER_ID = ".popout-hover";
 const SHOP_SIDE_EDGE_PEEK_PX = 6;
+const PRODUCT_SHOWCASE_ID = ".product-showcase";
 
 let initialized = false;
 let logoSpinAnimation = null;
@@ -30,6 +31,37 @@ function startLogoSpin(dur) {
         loop: true,
         loopDelay: 0,
         duration: dur
+    });
+}
+
+function initializeProductShowcases() {
+    document.querySelectorAll(PRODUCT_SHOWCASE_ID).forEach(showcase => {
+        const mainImage = showcase.querySelector('.showcase-main');
+        const thumbs = showcase.querySelectorAll('.showcase-thumb');
+
+        if (!mainImage || thumbs.length === 0) { return; }
+
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const nextSrc = thumb.dataset.src;
+                if (!nextSrc || nextSrc === mainImage.getAttribute('src')) { return; }
+
+                const nextAlt = thumb.dataset.alt || mainImage.getAttribute('alt') || '';
+
+                mainImage.setAttribute('src', nextSrc);
+                mainImage.setAttribute('alt', nextAlt);
+
+                thumbs.forEach(item => item.classList.remove('is-active'));
+                thumb.classList.add('is-active');
+
+                animate(mainImage, {
+                    opacity: [0.35, 1],
+                    scale: [0.96, 1],
+                    duration: 220,
+                    ease: 'out(2)'
+                });
+            });
+        });
     });
 }
 
@@ -84,11 +116,13 @@ function initializeAnimations() {
     //     duration: 500
     // });
 
+    initializeProductShowcases();
+
     document.querySelectorAll(POPOUT_HOVER_ID).forEach(el => {
         el.addEventListener('mouseenter', () => {
             const X_OFFSET = randRange(-30, 30), Y_OFFSET = randRange(-30, 30), ROTATE_OFFSET = randRange(-30, 30);
             animate(el, {
-                scale: 1.3,
+                scale: 1.4,
                 x: X_OFFSET,
                 y: Y_OFFSET,
                 rotate: ROTATE_OFFSET,
