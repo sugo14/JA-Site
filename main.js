@@ -234,13 +234,6 @@ function initializeAnimations() {
 		});
 	});
 
-	document.querySelectorAll(SHOP_LINK_ID).forEach(link => {
-		link.addEventListener('click', event => {
-			event.preventDefault();
-			window.alert('Online shopping available soon!');
-		});
-	});
-
 	// const TEAM_PHOTO_EL = document.querySelector(TEAM_PHOTO_ID);
 	// TEAM_PHOTO_EL.addEventListener('mouseenter', () => {
 	// 	const X_OFFSET = randRange(-20, 20), Y_OFFSET = randRange(-20, 20), ROTATE_OFFSET = randRange(-10, 10);

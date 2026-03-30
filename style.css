@@ -529,8 +529,23 @@ footer .r {
 
 .item-title {
     font-size: 60px;
-    color: var(--white);
+    margin: 0 0 20px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.item-category {
+    font-size: 25px;
     margin: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.item-price {
+    font-size: 40px;
+    margin: 10px 0;
+    text-align: left;
+    width: 100%;
 }
 
 .shop-item-box {
@@ -550,15 +565,17 @@ footer .r {
     /* background-color: #fcdd5f80; */
     width: 40%;
     border-radius: 20px;
+    color: var(--white);
 }
-/* .shop-item-box .l {
-    width: 40%;
+.shop-item-box .l {
+    width: 25%;
     height: 100%;
+    background-color: var(--green);
 }
 .shop-item-box .r {
     width: 40%;
-    height: 100%;
-} */
+    background-color: var(--yellow);
+}
 
 .shop-item-box .l img {
     width: 80%;
