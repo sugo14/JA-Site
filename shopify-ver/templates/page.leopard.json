@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "leopard"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

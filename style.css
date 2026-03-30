@@ -706,9 +706,6 @@ body:not(.is-loaded) .shop-item-box .r {
         gap: 30px;
         width: min(90vw, 1600px);
     }
-    .shop-item-box .l, .shop-item-box .r {
-        color: var(--white);
-    }
     .shop-item-box .l {
         width: 100%;
         height: auto;

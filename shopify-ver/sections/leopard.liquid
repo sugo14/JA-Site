@@ -1,0 +1,77 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+
+<div class="leopard-page">
+  <nav class="text-shadow">
+    <a href="/" class="logo-link">
+      <img class="logo unselectable" src="{{ 'logo.png' | asset_url }}" alt="Reo logo">
+    </a>
+  </nav>
+
+  <main class="item-main">
+    <div class="shop-item-box">
+      <div class="l">
+        <p class="species-name text-shadow">Panthera pardus orientalis</p>
+        <div class="product-showcase">
+          <div class="item-frame">
+            <img
+              class="showcase-main popout-hover"
+              src="{{ 'amur-leopard-cropped.png' | asset_url }}"
+              alt="Amur Leopard magnet artwork"
+            >
+          </div>
+          <div class="showcase-thumbs" role="tablist" aria-label="Product image selector">
+            <button class="showcase-thumb is-active" type="button" data-src="{{ 'amur-leopard-cropped.png' | asset_url }}" data-alt="Amur Leopard magnet artwork">
+              <img src="{{ 'amur-leopard-cropped.png' | asset_url }}" alt="Amur Leopard thumbnail cropped">
+            </button>
+            <button class="showcase-thumb" type="button" data-src="{{ 'logo.png' | asset_url }}" data-alt="Amur Leopard full artwork">
+              <img src="{{ 'logo.png' | asset_url }}" alt="Amur Leopard thumbnail full">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="r">
+        <h2 class="item-category">Magnet Set</h2>
+        <h1 class="item-title text-shadow">Amur Leopard</h1>
+        <p>
+          Nastya is one of only around 130 Amur leopards left in the wild!
+          These beautiful big cats are also one of the most endangered animals on Earth.
+          <br><br>
+          This set includes:
+        </p>
+        <ul>
+          <li>1 Nastya magnet</li>
+          <li>1 postcard from Nastya</li>
+          <li>1 extra surprise: either a sticker or a clay figurine!</li>
+        </ul>
+        <h2 class="item-price text-shadow">$5.00</h2>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <div class="l">
+        <p>
+            We acknowledge that the land on which we operate is Treaty 6 territory and a traditional meeting ground and home for many Indigenous peoples.
+        </p>
+    </div>
+    <div class="r">
+        <a href="https://www.instagram.com/stickwithreo/" target="_blank">
+        
+            <img src="{{ 'instagram-logo.svg' | asset_url }}" class="link-logo insta unselectable">
+        </a>
+        <a href="mailto:reo.ja.team@gmail.com" target="_blank">
+            <img src="{{ 'email-icon.svg' | asset_url }}" class="link-logo email unselectable">
+        </a>
+    </div>
+</footer>
+</div>
+
+<script type="module" src="{{ 'main2.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Leopard",
+  "settings": []
+}
+{% endschema %}
