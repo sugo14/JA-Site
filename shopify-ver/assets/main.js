@@ -17,7 +17,7 @@ const LIZARD_ID = '.animal.lizard';
 const MONKEY_ID = '.animal.monkey';
 const COUGAR_ID = '.animal.cougar';
 const POPOUT_HOVER_ID = '.popout-hover';
-const SHOP_LINK_ID = '.shop-link';
+const PROD_IMG_ID = '.prod-img';
 
 let initialized = false;
 let logoSpinAnimation = null;
@@ -215,12 +215,21 @@ function initializeAnimations() {
 		});
 	});
 
-	document.querySelectorAll(SHOP_LINK_ID).forEach(link => {
-		link.addEventListener('click', event => {
-			event.preventDefault();
-			window.alert('Online shopping available soon!');
-		});
+	animate(PROD_IMG_ID, {
+		keyframes: [
+			{ rotate: 30, duration: 220, ease: 'out(3)' },
+			{ rotate: 0, ease: spring({ bounce: 0.85, duration: 400 }) }
+		],
+		loop: true,
+		loopDelay: 150
 	});
+
+	// document.querySelectorAll(SHOP_LINK_ID).forEach(link => {
+	// 	link.addEventListener('click', event => {
+	// 		event.preventDefault();
+	// 		window.alert('Online shopping available soon!');
+	// 	});
+	// });
 }
 
 function bootstrapPageAnimations() {

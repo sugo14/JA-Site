@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "polar-bear"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
