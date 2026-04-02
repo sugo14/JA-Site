@@ -20,11 +20,11 @@
             >
           </div>
           <div class="showcase-thumbs" role="tablist" aria-label="Product image selector">
-            <button class="showcase-thumb is-active" type="button" data-src="{{ 'polar-bear-cropped.png' | asset_url }}" data-alt="Polar Bear magnet artwork">
-              <img src="{{ 'polar-bear-cropped.png' | asset_url }}" alt="Polar Bear thumbnail cropped">
+            <button class="showcase-thumb is-active" type="button" data-src="{{ 'polar-bear-cropped.png' | asset_url }}" data-alt="Polar Bear magnet">
+              <img src="{{ 'polar-bear-cropped.png' | asset_url }}" alt="Polar Bear thumbnail">
             </button>
-            <button class="showcase-thumb" type="button" data-src="{{ 'logo.png' | asset_url }}" data-alt="Polar Bear full artwork">
-              <img src="{{ 'logo.png' | asset_url }}" alt="Polar Bear thumbnail full">
+            <button class="showcase-thumb" type="button" data-src="{{ 'polar-bear-packaging-cropped.png' | asset_url }}" data-alt="Polar Bear packaging">
+              <img src="{{ 'polar-bear-packaging-cropped.png' | asset_url }}" alt="Polar Bear packaging">
             </button>
           </div>
         </div>
@@ -45,9 +45,9 @@
           <li>1 extra surprise: either a sticker or a clay figurine!</li>
         </ul>
         <p>
-          40% of profits from this product will go directly to animal conservation efforts. 
+          <span class="text-shadow">40% of profits</span> from this product will go directly to animal conservation efforts. 
         </p>
-        <h2 class="item-price text-shadow">$5.00</h2>
+        <h2 class="item-price text-shadow">{{ product.price | money }}</h2>
 
         <div class="product-buy-box">
             {% form 'product', product, id: 'product-form' %}
