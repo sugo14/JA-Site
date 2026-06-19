@@ -1,7 +1,8 @@
 {
   "sections": {
     "main": {
-      "type": "custom-landing"
+      "type": "custom-landing",
+      "settings": {}
     }
   },
   "order": [

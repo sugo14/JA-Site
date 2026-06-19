@@ -1,7 +1,8 @@
 {
   "sections": {
     "main": {
-      "type": "leopard"
+      "type": "leopard",
+      "settings": {}
     }
   },
   "order": [

@@ -15,16 +15,16 @@
           <div class="item-frame">
             <img
               class="showcase-main popout-hover"
-              src="{{ 'polar-bear-cropped.png' | asset_url }}"
+              src="{{ 'pb-small-square.jpg' | asset_url }}"
               alt="Polar Bear magnet artwork"
             >
           </div>
           <div class="showcase-thumbs" role="tablist" aria-label="Product image selector">
-            <button class="showcase-thumb is-active" type="button" data-src="{{ 'polar-bear-cropped.png' | asset_url }}" data-alt="Polar Bear magnet">
-              <img src="{{ 'polar-bear-cropped.png' | asset_url }}" alt="Polar Bear thumbnail">
+            <button class="showcase-thumb is-active" type="button" data-src="{{ 'pb-small-square.jpg' | asset_url }}" data-alt="Polar Bear magnet">
+              <img src="{{ 'pb-small-square.jpg' | asset_url }}" alt="Polar Bear thumbnail">
             </button>
-            <button class="showcase-thumb" type="button" data-src="{{ 'polar-bear-packaging-cropped.png' | asset_url }}" data-alt="Polar Bear packaging">
-              <img src="{{ 'polar-bear-packaging-cropped.png' | asset_url }}" alt="Polar Bear packaging">
+            <button class="showcase-thumb" type="button" data-src="{{ 'pb-big-square.jpg' | asset_url }}" data-alt="Polar Bear packaging">
+              <img src="{{ 'pb-big-square.jpg' | asset_url }}" alt="Polar Bear packaging">
             </button>
           </div>
         </div>
@@ -35,7 +35,7 @@
         <h1 class="item-title text-shadow">Polar Bear</h1>
         <p>
           Gloria is a polar bear, one of the largest land carnivores on Earth!
-          But as sea ice melts, life gets harder and harder for them, with only around 17,000 polar bears left in the wild.
+          But as sea ice melts, life gets harder and harder for them, with only around 26,000 polar bears left in the wild.
           <br><br>
           This set includes:
         </p>
@@ -45,7 +45,7 @@
           <li>1 extra surprise: either a sticker or a clay figurine!</li>
         </ul>
         <p>
-          <span class="text-shadow">40% of profits</span> from this product will go directly to animal conservation efforts. 
+          <span class="text-shadow">40% of profits</span> from this product will go directly to animal conservation efforts. To learn more about polar bear conservation, please visit <a href="https://polarbearsinternational.org/" target="_blank">polarbearsinternational.org</a>.
         </p>
         <h2 class="item-price text-shadow">{{ product.price | money }}</h2>
 
@@ -82,13 +82,15 @@
         </p>
     </div>
     <div class="r">
-        <a href="https://www.instagram.com/stickwithreo/" target="_blank">
-        
-            <img src="{{ 'instagram-logo.svg' | asset_url }}" class="link-logo insta unselectable">
-        </a>
-        <a href="mailto:reo.ja.team@gmail.com" target="_blank">
-            <img src="{{ 'email-icon.svg' | asset_url }}" class="link-logo email unselectable">
-        </a>
+        <div class="icon-box">
+            <a href="https://www.instagram.com/stickwithreo/" target="_blank">
+                <img src="{{ 'instagram-logo.svg' | asset_url }}" class="link-logo insta unselectable">
+            </a>
+            <a href="mailto:reo.ja.team@gmail.com" target="_blank">
+                <img src="{{ 'email-icon.svg' | asset_url }}" class="link-logo email unselectable">
+            </a>
+        </div>
+        <p>Art by Shay.</p> 
     </div>
 </footer>
 </div>

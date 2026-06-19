@@ -1,7 +1,8 @@
 {
   "sections": {
     "main": {
-      "type": "polar-bear"
+      "type": "polar-bear",
+      "settings": {}
     }
   },
   "order": [
